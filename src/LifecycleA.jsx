@@ -1,51 +1,51 @@
-import React,{Component} from "react"
+import { Component } from "react";
+import LifecycleB from "./LifecycleB";
 class LifecycleA extends Component{
     constructor(props){
         super(props)
-            this.state={
-                name:'pizza'
-            }
-            console.log('Life cycle A constructor')
-              
-        }
-        static getDerivedStateFromProps(props,state){
-            console.log('life cycleA getderiverfromprops ')
-            return null
-        }
-        componentDidMount(){
-            console.log('Lifecycle A componentdidmount')
-        }
 
-        shouldComponentUpdate(){
-            console.log('LifecycleA should component update')
+        this.state={
+            name:'narthana'
         }
-
-        getSnapshotBeforeUpdate(prevProps,prevState){
-            console.log('LifecycleA getsnapShotbeforeupdate')
-            return null
-
-        }
-        componentDidUpdate(){
-            console.log('LifeCycleA componentDidUpdate')
-        }
-        changeState=()=>{
-            this.setState({
-                name:'code evolution'
-            })
-        }
-    
-    render(){
-        console.log('lifecycle A render')
-        return(
-            <div>
-               Life cycle A <br />
-               <button onClick={this.changeState}>Change state</button>
-            </div>
-        )
+        console.log('lifecycle A construcot')
     }
-
+    static getDerivedStateFromProps(props,state){
+        console.log('lifecycle A getderived state from props')
+        return null
+    }
+    componentDidMount(){
+        console.log('lifecycle A componentdidmount')
+        return true
+    }
+    shouldComponentUpdate(){
+        console.log('LifecycleA shouldcomponentupdate')
+    }
+    getSnapshotBeforeUpdate(prevProps,prevState){
+        console.log('Lifecycle A getsnapshortbeforeupdate')
+        return null
+    }
+    componentDidUpdate(){
+        console.log('Lifecycle A componentDidUpdate')
+    }
+    changeState=()=>{
+        this.setState({
+            name:'code evolution'
+        })
+    }
+    render(){
+        console.log('lifrcycle A render')
+        return ( 
+        <div>
+              <div> lifecycle A</div>
+              <button onClick={this.changeState}>CHANGE STATE</button>
+              <LifecycleB />
+              </div>
+            )
+    }
 }
 export default LifecycleA
+
+
 
 
 

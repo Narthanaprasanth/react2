@@ -27,6 +27,7 @@ class LifecycleB extends Component{
         componentDidUpdate(){
             console.log('LifecycleB componentDidUpdate')
         }
+
     
         
     
@@ -41,3 +42,11 @@ class LifecycleB extends Component{
 
 }
 export default LifecycleB
+
+
+
+
+
+
+
+

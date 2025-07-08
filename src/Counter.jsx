@@ -1,43 +1,35 @@
-import React, { Component } from 'react'
+import { Component } from "react";
 
- class Counter extends Component {
-    constructor(props){
-        super(props)
-            this.state={
-                count:0
-            }
+class Counter extends Component{
+    constructor(){
+        super()
+        this.state={
+            count:0
+        }
     }
     increment(){
-    this.setState(prevState=>({count:prevState.count+1}))
+        this.setState(prevState =>({
+            count:prevState.count+1
+        }))
     }
-    decrement(){
-        this.setState({
-            count:this.state.count-1
-        },()=>{console.log('callback value',this.state.count)})
-    }
-
     incrementFive(){
         this.increment()
         this.increment()
         this.increment()
         this.increment()
         this.increment()
+        
     }
-  render() {
-    return (
-        <div>
-             <div>Count - {this.state.count}</div>
-             <button onClick={()=>this.incrementFive()}>INCREMENT</button>
-             <button onClick={()=>this.decrement()}>DECREMENT</button>
-        </div>
-     
-    )
-  }
+    render(){
+        return(
+            <div>
+                <div>
+                Count -{this.state.count}<br></br>
+                <button onClick={()=>this.incrementFive()}>count</button>
+                </div>
+            </div>
+            
+        )
+    }
 }
-
-export default Counter         
-
-
-
-
-
+export default Counter

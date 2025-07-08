@@ -1,6 +1,7 @@
 import { Component } from "react";
-//----------CONDITIONAL RENDERING------------
-export class Usergreet extends Component{
+import Message from "./Message";
+
+class UserGreeting extends Component{
     constructor(props){
         super(props)
 
@@ -8,47 +9,69 @@ export class Usergreet extends Component{
             isLoggedIn:true
         }
     }
-    // render(){
-        //[1]-----CONDITIONAL RENDERING IF ELSE--TERNARY OPERATION-- CAN WRITE INSIDE JSX
-        // return(
-        //     this. state.isLoggedIn ? <div>Welcome Rixx</div> : <div>welcome Guest</div>
-        // )
-        //[2]--------IF ESLE INSIDE RENDER USING MESSAGE VARIABLE-----------
 
-        // let message
-        // if(this.state.isLoggedIn){
-        //     message=<div>Welcome riyx</div>
-        // }else{
-        //     message=<div>Welcome guest</div>
-        // }
-
-        // return <div>{message}</div>
-
-
-        //[3]-----NORMAL IF ELSE INSIDE RENDER---------------
-
-        // if(this.state.isLoggedIn){
-        //     return <div>welcome riyaa</div>
-        // }else{
-        //     return <div>welcome Guest</div>
-        // }
-
-
-        //[4]-------SHOT CIRCUIT OPERATOR--------------
-
-        render(){
-            return this.state.isLoggedIn && <div>Welcome rixx</div>
-        }
-
-
-
-        // return(
-        //     <div>
-        //   <div>Welcome Reethus</div>
-        //   <div>Welcome Guest</div>
-        //   </div>
-        // )
-    }
+    //-----CONDITIONAL RENDERING [TYPE-1]------------
+//     render(){
+//        if(this.state.isLoggedIn){
+//         return <div>Welcome kiinnm.....</div>
+        
+//        }else{
+//         return(
+//             <div>welcome guest...</div>
+//         )
+//        }
 // }
-export default Usergreet
+
+
+
+//--------CONDITIONAL RENDERING USING MESSAGE VARIABLES[TYPE-2]-----------
+// render(){
+//     let Message
+//     if(this.state.isLoggedIn){
+//         Message=<div>welcome  kinnnm..</div>
+//     }else{
+//         Message=<div>welcome guestt..</div>
+//     }
+
+// return <div>{Message}</div>
+// }
+
+
+
+//......CONDITIONAL RENDERING USING TERNARY CONDITIONAL OPERATOR-----------
+    
+// render(){
+//     return(
+        
+//             this.state.isLoggedIn ? 
+//             <div>welcome kinm..</div> : 
+//             <div>welcome guest..</div>
+       
+//     )
+// }
+
+
+//------CONDITIONAL RENDERING SHORT CIRCUIT OPERATOR METHOD------------
+
+render(){
+    return(
+        this.state.isLoggedIn && <div>welcome kinmmm</div>
+    )
+}
+
+}
+export default UserGreeting
+
+
+
+
+
+
+
+
+
+
+
+
+
 

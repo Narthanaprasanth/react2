@@ -1,72 +1,68 @@
 import React, { Component } from "react";
+
 class Form extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       username: "",
-      comments: "",
-      topic:'react'
-    }
+      Comment: "",
+      topic:"react"
+    };
   }
-  handleusernamechange = (event) => {
+
+  handlenamechange = (event) => {
     this.setState({
       username: event.target.value,
-    })
-  }
-  handlecommentscahnge = (event) => {
-    this.setState({
-      comments: event.target.value,
     });
   };
-  handletopicchange=(event) =>{
+  handlecommentchange = (event) => {
     this.setState({
-        topic:event.target.value
+      Comment: event.target.value,
+    });
+  };
+  handletopichange=(event)=>{
+    this.setState({
+      topic:event.target.value
     })
   }
-  handleSubmit=(event)=>{
-    alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`)
-    event.preventDefault()      //TO PREVENT THE DEFAULT BAHAVOIRS LIKE REFRESHING WHILE CLICKING SUBMIT
+  handlesubmit=(event)=>{
+    alert(`${this.state.username} ${this.state.Comment}${this.state.topic}`)
+    event.preventDefault()
   }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label>Username </label>
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.handleusernamechange}
-          />
+      <form onSubmit={this.handlesubmit}> 
+      <div>
+        <label>usernmame</label>
+        <input
+          type="text"
+          value={this.state.username}
+          onChange={this.handlenamechange}
+        />
         </div>
         <div>
-          <label>comments</label>
+          <label>Comments</label>
           <textarea
-            value={this.state.comments}
-            onChange={this.handlecommentscahnge}
+            value={this.state.Comment}
+            onChange={this.handlecommentchange}
           ></textarea>
         </div>
-        <label>Topic</label>
-        <select value={this.state.topic} onChange={this.handletopicchange}>
-        <option value="react">React</option>
-        <option value="angular">Angular</option>
-        <option value="vue">vue</option>
-        </select><br />
-        <button>submit</button>
+        <div>
+          <label> Topic</label>
+          <select value={this.state.topic} onChange={this.handletopichange}>
+            <option value="react">React</option>
+            <option value="angular">Angular</option>
+            <option value="vue">Vue</option>
+          </select>
+        </div>
+      <button type="submit">SUBMIT</button>
       </form>
     );
   }
 }
 export default Form;
-
-
-
-
-
-
-
-
-
-
 
 
 
